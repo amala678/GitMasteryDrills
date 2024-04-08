@@ -1,42 +1,158 @@
-## Readme 
-# Basic Commands
-This  will introduce you to the git add and git commit commands.
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git branch
+* main
 
-You can look at the bottom of this file, if you have not yet done basic git configuration.
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git branch amala
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git branch
+hi again
+* main
+create on branch amala
+  amala
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git switch amala
+A       abc.txt
+Switched to branch 'amala'
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git status
+On branch amala
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   abc.txt
 
-## The task
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ vi abc.txt
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ vi amala.txt
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git add amala.txt
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git commit -m "amala"
+Author identity unknown
 
-1. Use `git status` to see which branch you are on.
-2. What does `git log` look like?
-3. Create a file
-4. What does the output from `git status` look like now?
-5. `add` the file to the staging area
-6. How does `git status` look now?
-7. `commit` the file to the repository
-8. How does `git status` look now?
-9. Change the content of the file you created earlier
-10. What does `git status` look like now?
-11. `add` the file change
-12. What does `git status` look like now?
-13. Change the file again
-14. Make a `commit`
-15. What does the `status` look like now? The `log`?
-16. Add and commit the newest change
+*** Please tell me who you are.
 
-## Useful commands
-- `git add`
-- `git commit`
-- `git commit -m "My commit message"`
-- `git log`
-- `git log -n 5`
-- `git log --oneline`
-- `git log --oneline --graph`
-- `touch filename` to create a file (or `sc filename ''` in PowerShell)
-- `echo content > file` to overwrite file with content (or `sc filename 'content'` in PowerShell)
-- `echo content >> file` to append file with content (or `ac filename 'content'` in PowerShell)
+Run
 
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
 
-## Git Initial Configuration
-1. `git config --global user.name "USN"`
-2. `git config --global user.email "usn@msrit.edu`
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'g1ms21cs144@cs-435936759985-oics-gxlx.(none)')
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git log --oneline --graph
+* 860c602 (HEAD -> amala, origin/main, origin/HEAD, main) Update Exercise-1.md
+* c40889d Update README.md
+* 33bf93e Update README.md
+* a48aa1e Update README.md
+* 84de2e7 Update Exercise-1.md
+* 9726147 Update Exercise-1.md
+* c873f7a Update Exercise-1.md
+* f11816a Update README.md
+* 327831f Create Exercise-1.md
+* 4693a07 Update Exercise-1.md
+* a27b770 Create Exercise-1.md
+* 67f3948 Delete basic_commands/Exercise-1
+
+[3]+  Stopped                 git log --oneline --graph
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git config --global user.email "amala678@yahoo.com"
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git config --global user.name "amala678"
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git log --oneline --graph
+* 860c602 (HEAD -> amala, origin/main, origin/HEAD, main) Update Exercise-1.md
+* c40889d Update README.md
+* 33bf93e Update README.md
+* a48aa1e Update README.md
+* 84de2e7 Update Exercise-1.md
+* 9726147 Update Exercise-1.md
+* c873f7a Update Exercise-1.md
+* f11816a Update README.md
+* 327831f Create Exercise-1.md
+* 4693a07 Update Exercise-1.md
+* a27b770 Create Exercise-1.md
+* 67f3948 Delete basic_commands/Exercise-1
+
+[4]+  Stopped                 git log --oneline --graph
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git status
+On branch amala
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   abc.txt
+        new file:   amala.txt
+
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git log --oneline --graph
+* 860c602 (HEAD -> tavishi, origin/main, origin/HEAD, main) Update Exercise-1.md
+* c40889d Update README.md
+* 33bf93e Update README.md
+* a48aa1e Update README.md
+* 84de2e7 Update Exercise-1.md
+* 9726147 Update Exercise-1.md
+* c873f7a Update Exercise-1.md
+* f11816a Update README.md
+* 327831f Create Exercise-1.md
+* 4693a07 Update Exercise-1.md
+* a27b770 Create Exercise-1.md
+* 67f3948 Delete basic_commands/Exercise-1
+
+[5]+  Stopped                 git log --oneline --graph
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git switch main
+A       abc.txt
+A       amala.txt
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git log --oneline --graph
+* 860c602 (HEAD -> main, origin/main, origin/HEAD, tavishi) Update Exercise-1.md
+* c40889d Update README.md
+* 33bf93e Update README.md
+* a48aa1e Update README.md
+* 84de2e7 Update Exercise-1.md
+* 9726147 Update Exercise-1.md
+* c873f7a Update Exercise-1.md
+* f11816a Update README.md
+* 327831f Create Exercise-1.md
+* 4693a07 Update Exercise-1.md
+* a27b770 Create Exercise-1.md
+* 67f3948 Delete basic_commands/Exercise-1
+byeeee
+
+[6]+  Stopped                 git log --oneline --graph
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   abc.txt
+        new file:   amala.txt
+
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ vi new.txt
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git add new.txt
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git commit -m "bye"
+[main 2bd85cc] bye
+ 3 files changed, 3 insertions(+)
+ create mode 100644 abc.txt
+ create mode 100644 new.txt
+ create mode 100644 amala.txt
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git log --oneline --graph --all
+* 2bd85cc (HEAD -> main) bye
+* 860c602 (origin/main, origin/HEAD, tavishi) Update Exercise-1.md
+* c40889d Update README.md
+* 33bf93e Update README.md
+* a48aa1e Update README.md
+* 84de2e7 Update Exercise-1.md
+* 9726147 Update Exercise-1.md
+* c873f7a Update Exercise-1.md
+* f11816a Update README.md
+* 327831f Create Exercise-1.md
+* 4693a07 Update Exercise-1.md
+* a27b770 Create Exercise-1.md
+
+[7]+  Stopped                 git log --oneline --graph --all
+g1ms21cs144@cloudshell:~/cloudshell_open/GitMasteryDrills$ git diff amala main
+diff --git a/abc.txt b/abc.txt
+new file mode 100644
+index 0000000..edde936
+--- /dev/null
++++ b/abc.txt
+@@ -0,0 +1 @@
++hi again 
+diff --git a/new.txt b/new.txt
+new file mode 100644
+index 0000000..bb24ee3
+--- /dev/null
++++ b/new.txt
+
+[8]+  Stopped                 git diff amala main
 
